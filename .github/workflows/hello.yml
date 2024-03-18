@@ -24,7 +24,7 @@ jobs:
       - name: Build with Maven for dev environment
         run: mvn -Dpassword=${{secrets.DEV_PASSWORD}} -B package --file pom.xml
         env:
-          url:${{DEV_URL}}
+          url:${DEV_URL}
           username:${{secrets.DEV_USERNAME}}
       - name: Build with Maven for test environment
         run: mvn -Durl=$TEST_URL -Dusername=${{secrets.TEST_USERNAME}} -Dpassword=${{secrets.TEST_PASSWORD}} -B package --file pom.xml
