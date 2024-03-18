@@ -21,5 +21,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Build with Maven for dev environment
+        run: mvn -Durl=${{DEV_URL}} -Dusername=${{DEV_USERNAME}} -Dpassword=${{DEV_PASSWORD}} -B package --file pom.xml
+      - name: Build with Maven for test environment
+        run: mvn -Durl=${{TEST_URL}} -Dusername=${{TEST_USERNAME}} -Dpassword=${{TEST_PASSWORD}} -B package --file pom.xml
