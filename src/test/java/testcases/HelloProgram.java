@@ -11,6 +11,7 @@ public class HelloProgram {
         //System.out.println(System.getenv("username"));
         System.out.println(System.getProperty("username"));
         System.out.println(System.getProperty("password"));
+        System.out.println(System.getProperty("url"));
     }
 }
 
