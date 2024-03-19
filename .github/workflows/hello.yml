@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven for dev environment
-        run: mvn -Dusername=${{secrets.DEV_USERNAME}} -Dpassword=${{secrets.DEV_PASSWORD}} -Durl=${DEV_URL} -B package --file pom.xml
+        run: mvn -Dusername=${{secrets.DEV_USERNAME}} -Dpassword=${{secrets.DEV_PASSWORD}} -Durl=${{env.DEV_URL}} -B package --file pom.xml
         #env:
         #  username:${{secrets.DEV_USERNAME}}
       #- name: Build with Maven for test environment
